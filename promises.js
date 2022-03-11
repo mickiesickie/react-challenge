@@ -17,5 +17,6 @@ const getPetFoods = () =>
     { type: 'dog', food: 'dog food' },
   ]);
 
+console.log('getPetNames' ,getPetNames)
 //write a function that fetches both "apis" and returns the following response:
 // [{name: 'derp', food: 'dog food'}, {name: 'waffles', food: 'cat food'}]

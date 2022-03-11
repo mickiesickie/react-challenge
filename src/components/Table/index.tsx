@@ -1,5 +1,7 @@
-const OrderTable = ({ children }:any) => {
-  return (
+// @ts-ignore
+const OrderTable = ( {items} :any) => {
+    const {children} = items
+    return (
     <table>
       <thead>
         <tr>
@@ -11,13 +13,14 @@ const OrderTable = ({ children }:any) => {
         </tr>
       </thead>
       <tbody>
-        {children && children.length > 0 ? (
-          children
-        ) : (
-          <tr className="empty">
-            <td></td>
-          </tr>
-        )}
+
+      { children && children.length > 0 && children.map((item:any, index:number) => (
+              <tr key={index}>
+                  <td>{item?.product}</td>
+                  <td>{item?.quantity}</td>
+              </tr>
+          ))
+      }
       </tbody>
     </table>
   );
