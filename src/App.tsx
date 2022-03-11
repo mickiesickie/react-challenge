@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import OrderTable from "./components/Table";
+import AddProduct from "./components/AddProducts";
+import PRODUCTS from "./data";
+import PromoCode from "./components/PromoCode";
+import OrderLine from './components/OrderLine';
 
-function App() {
+const App = () => {
+
+  const handleAddProduct = (name:any, quantity:any) => {};
+
+  const handlePromoChange = (event:any) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <OrderTable>{/* Your code here */}</OrderTable>
+      <AddProduct
+        products={Object.values(PRODUCTS).map((product) => product.name)}
+        onClickAdd={handleAddProduct}
+      />
+
+      <PromoCode />
     </div>
   );
-}
+};
+
 
 export default App;
